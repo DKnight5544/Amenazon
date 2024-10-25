@@ -1,0 +1,146 @@
+
+:root {
+    --primary-color: #446380;
+}
+
+body {
+    margin: 0;
+    font-family: 'Kalam', sans-serif;
+    padding-bottom: 40px;
+}
+
+.banner {
+    width: 100%;
+    margin:0;
+    margin-bottom:0px;
+    box-sizing: border-box;
+}
+
+img {
+    margin: 0;
+    margin-bottom: 0px;
+}
+
+.book-promo {
+    width:100%;
+    background-color: var(--primary-color);
+    margin: 0;
+    margin-top: -10px;
+    padding: 10px;
+    padding-top: 13px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+a {
+    margin-top: 0px;
+    border: 2px solid white;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 7px;
+    padding-top: 10px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+
+.para-header {
+    margin-top: 30px;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+.main {
+    width: 100%;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p {
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 24px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+ul {
+    padding-left: 50px;
+    margin-top: 10px;
+}
+
+    ul li {
+        margin-bottom: 10px;
+    }
+
+
+ol {
+    padding-left: 50px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+    ol li {
+        margin-bottom: 10px;
+    }
+
+.spacer {
+    height: 15px;
+}
+
+
+/* Input box and button styling */
+.input-container {
+    padding-left: 20px;
+    padding-right: 20px;
+    overflow: hidden; /* Ensure the floated elements stay contained */
+}
+
+input[type="text"] {
+    width: 75%; /* Set input width to 75% */
+    float: left; /* Float input to the left */
+    padding: 10px;
+    font-size: 24px;
+    font-family: 'Kalam', sans-serif;
+    box-sizing: border-box;
+}
+
+button {
+    float: left; /* Float the button next to the input */
+    font-size: 26px;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-family: 'Kalam', sans-serif;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 600px) {
+    .banner {
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    ol {
+        font-size: 18px;
+    }
+
+    input[type="text"] {
+        font-size: 18px;
+        padding: 8px;
+        width: 65%;
+    }
+
+    button {
+        font-size: 20px;
+        padding: 8px 20px;
+    }
+}
