@@ -55,7 +55,7 @@
             margin: 0;
             margin-bottom:20px;
             letter-spacing: 0; /* Starting letter spacing */
-            /*animation: shrinkEffect 3s infinite;*/ /* Apply the shrinking animation */
+            animation: shrinkEffect 3s infinite; /* Apply the shrinking animation */
         }
 
         .tag-line {
@@ -65,7 +65,7 @@
             font-size: 1em;
             font-weight:normal;
             background-color:white;
-            opacity:.40;
+            opacity:.50;
             color: black;
             padding: 3px;
             padding-left:25px;
@@ -108,12 +108,6 @@
                 float:none;
             }
 
-
-            .tag-line {
-                margin-bottom: 30px;
-            }
-
-
         }
     </style>
 
@@ -138,24 +132,6 @@
             <img class="merch"
                  src="merch/chubbyplushjesus.jpg"
                  alt="small statue: a comical jesus with big smile with thumbs up." />
-        </a>
-
-        <a href="https://amzn.to/3C30f9h">
-            <img class="merch"
-                 src="merch/Benny_Hinn_MysteriesOfTheAnnonting.jpg"
-                 alt="Book: Mysteries of the Annointing by Benny Hinn." />
-        </a>
-
-        <a href="https://amzn.to/3AeuMjO">
-            <img class="merch"
-                 src="merch/Joel_Osteen_IDeclare_.jpg"
-                 alt="Book: I Declare by Joel Osteen." />
-        </a>
-
-        <a href="https://amzn.to/3Yi365L">
-            <img class="merch"
-                 src="merch/Game_SoYouThinkYouKnowTheBible.jpg"
-                 alt="Game: So you think you know the bible." />
         </a>
 
     </div>
@@ -204,54 +180,9 @@
             });
         }
 
+        // Run the function when the page loads
+        window.onload = applyRandomColor;
     </script>
-
-    <script>
-        // Array of new taglines
-        const taglines = [
-            "Where Jesus Shops for Heavenly Deals!",
-            "The Best Jesus Junk in the Amaverse!",
-            "Where Name It and Claim It Meets...",
-            "...Click It and Buy It!",
-            "Each Purchase a Ticket to Heaven!",
-            "Blessings in Every Cart!",
-            "Your Faithful Source of Fun Finds!",
-            "Saintly Savings! Can I get an Amen?",
-            "Miracles in Every Box!",
-            "Sacred Sales & Divine Deals!",
-            "Holy Goods, Heavenly Prices!",
-            "The Almighty's Own Marketplace!",
-            "Your One-Stop Jesus Shop!",
-            "Where Blessings and Deals Meet!",
-            "Good News! Great Buys!",
-            "For All Your Angelic Impulses!",
-            "Holier Than Thou Bargains!",
-            "Spread the Faith, Save a Buck!",
-            "Piety in Every Package!",
-            "Holy Treasures Delivered!",
-            "Spiritual Steals and Miraculous Deals!",
-            "Gospel Goodies Galore!"
-        ];
-
-        // Function to rotate taglines every few seconds
-        function rotateTaglines() {
-            const taglineElement = document.querySelector(".tag-line");
-            let index = 0;
-
-            // Update tagline text every 3 seconds
-            setInterval(() => {
-                taglineElement.textContent = taglines[index];
-                index = (index + 1) % taglines.length; // Loop back to start
-            }, 3000);
-        }
-
-        // Start rotating taglines when the page loads
-        window.onload = () => {
-            applyRandomColor();
-            rotateTaglines();
-        };
-    </script>
-
 
 
 </body>
