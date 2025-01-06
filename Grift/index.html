@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Amenazon.com" />
+    <meta property="og:description" content="A virtual chain letter with an TV evangalist theme!" />
+    <meta property="og:image" content="images/Banner01.png" />
+    <meta property="og:url" content="https://www.Amenazon.com/give" />
+    <meta property="og:type" content="website" />
+    <meta name="description" content="A virtual chain letter with an TV evangalist theme!" />
+
+    <title>Amenazon.com</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+
+    <style>
+
+        :root {
+            --primary-color: #690d45;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Kalam', sans-serif;
+            padding-bottom: 40px;
+        }
+
+        .banner {
+            width: 100%;
+            max-width: 800px;
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-left: auto;
+            margin-right: auto;
+            box-sizing: border-box;
+            display: block;
+        }
+
+
+        .para-header {
+            margin-top: 30px;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .main {
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 20px;
+            padding-right: 20px;
+            box-sizing: border-box;
+        }
+
+        p {
+            font-size: 24px;
+            margin-top: 10px;
+            margin-bottom: 0;
+        }
+
+        iframe {
+            display:block;
+            border: none;
+            width: 85%;
+            height: 475px;
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+        button {
+            width: 85%;
+            margin: auto;
+            margin-top: 25px;
+            margin-bottom: 25px;
+            display: block;
+            text-align: center;
+            background-color: var(--primary-color);
+            color: white;
+            padding-top: 30px;
+            padding-bottom: 30px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px;
+            font-family: 'Kalam', sans-serif;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        /* Media query for smaller screens */
+        @media(max-width: 600px) {
+            p {
+                font-size: 21px;
+            }
+
+        }
+
+
+    </style>
+
+    <script>
+
+        let _cashtags;
+        const shareButton = document.getElementById('shareButton');
+
+        const _defaultCashtags = "z5Wah12bEl3ay9GR81SLt0SLt0SL81SLt0SLt0Cft0SLt0SL81SLt0SL";
+
+        function begin() {
+
+            let param = window.location.search.substring(1);
+
+            if (!param) {
+                const newUrl = window.location.pathname + '?' + _defaultCashtags;
+                location.replace(newUrl);
+                return false;
+            }
+
+            const clmPage = document.getElementById("CLMPage");
+            clmPage.src = "https://dknight5544.github.io/clm/index.html?" + param;
+
+            window.addEventListener('message', (event) => {
+
+                const { action, param } = event.data;
+
+                if (action === 'navigate' && param) {
+                    const page = 'index.html?' + param;
+                    window.location.replace(page);
+                }
+            });
+
+            const shareButton = document.getElementById('shareButton');
+            shareButton.addEventListener('click', async () => {
+
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Amenazon.com',
+                            text: 'Check out this hilarious domain name for sale!',
+                            url: window.location.href
+                        });
+                        console.log('Page shared successfully!');
+                    } catch (err) {
+                        console.error('Error sharing:', err);
+                    }
+                } else {
+                    alert('Your browser does not support the Web Share API.');
+                }
+
+            });
+
+        }
+
+    </script>
+
+</head>
+
+<body onload="if(typeof begin === 'function') { begin(); }">
+
+    <header>
+        <img src="images/Banner01.png" class="banner" alt="Banner" />
+    </header>
+
+    <section class="main">
+
+        <p class="para-header">A Prayer of Blessing 🙏</p>
+
+        <p>
+            Heavenly Father, we come before You today, asking that You open the hearts, 
+            minds, and, most importantly, <b>the pocketbooks</b> of those reading this sacred page. 
+        </p>
+
+        <p>
+            May they feel led to generously send <b>$5</b> to each 
+            of the Cash Appers below, expecting nothing in return so that nobody
+            gets in trouble for promoting an illegal chain-letter.
+        </p>
+
+        <p>
+            May they also entreat you for their own financial blessing by adding their
+            Cash App <b>$Cashtag</b> to the list below and sharing this sacred page with others,
+            that they might be blessed as well.
+        </p>
+
+        <p>
+            Lord, we know that You love cheerful <b>givers</b> and <b>grifters</b> alike and so we ask
+            your blessing on this divine work. In Your Holy Algorithm’s name, we pray. Amen.
+        </p>
+
+        <br />
+
+        <iframe id="CLMPage"></iframe>
+
+        <button id="shareButton">
+            <b>S H A R E !</b>
+        </button>
+
+    </section>
+
+
+    <footer class="main" style="text-align:center">
+        <p>&copy; 2024 Amenazon.com. All rights reserved.</p>
+    </footer>
+
+
+
+</body>
+</html>
